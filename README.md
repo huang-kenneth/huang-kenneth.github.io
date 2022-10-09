@@ -1,2 +1,2 @@
 # website-test
- first website attemp
+ first website attempt
