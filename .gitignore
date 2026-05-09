@@ -1,0 +1,21 @@
+# Claude Code
+.claude/
+
+# Local utility scripts
+gen_thumbs.py
+history.txt
+content.txt
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Node (if ever added)
+node_modules/
