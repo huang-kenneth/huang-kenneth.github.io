@@ -1,6 +1,6 @@
 /* global React, ReactDOM, Header, Footer, About, Projects, Resume,
           TweaksPanel, useTweaks, TweakSection, TweakRadio, TweakSelect, TweakText */
-const { useState, useEffect, useMemo } = React;
+const { useState, useEffect, useMemo, useRef } = React;
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   name:          window.CONTENT.name,
@@ -17,11 +17,15 @@ function App() {
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [route, setRoute] = useState(() => {
     const h = (location.hash || '').replace('#', '');
-    return ['about', 'projects', 'resume'].includes(h) ? h : 'about';
+    const page = h.split('/')[0];
+    return ['about', 'projects', 'resume'].includes(page) ? page : 'about';
   });
 
+  // skip replaceState on first render so Projects can keep the initial #projects/id hash
+  const didMount = useRef(false);
   useEffect(() => {
-    if (route) history.replaceState(null, '', '#' + route);
+    if (!didMount.current) { didMount.current = true; return; }
+    history.replaceState(null, '', '#' + route);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [route]);
 

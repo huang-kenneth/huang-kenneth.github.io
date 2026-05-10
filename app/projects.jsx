@@ -118,7 +118,26 @@ function Projects({ layout, setLayout }) {
   const PROJECTS = window.CONTENT.projects;
 
   const [filter, setFilter] = useState('all');
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(() => {
+    const h = (location.hash || '').replace('#', '');
+    const parts = h.split('/');
+    if (parts[0] === 'projects' && parts[1]) {
+      return PROJECTS.find(p => p.id === parts[1]) || null;
+    }
+    return null;
+  });
+
+  const openProject = (p) => {
+    history.replaceState(null, '', '#projects/' + p.id);
+    setSelected(p);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  const closeProject = () => {
+    history.replaceState(null, '', '#projects');
+    setSelected(null);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
 
   const counts = useMemo(() => {
     const c = { all: PROJECTS.length };
@@ -132,7 +151,7 @@ function Projects({ layout, setLayout }) {
   }, [filter, PROJECTS]);
 
   if (selected) {
-    return <ProjectDetail project={selected} onBack={() => setSelected(null)} />;
+    return <ProjectDetail project={selected} onBack={closeProject} />;
   }
 
   return (
@@ -175,7 +194,7 @@ function Projects({ layout, setLayout }) {
       {layout === 'list' && (
         <div className="proj-list" key={`list-${filter}`}>
           {filtered.map((p, i) => (
-            <Reveal as="a" key={p.id} delay={i * 40} className="proj-row" href="#" onClick={(e) => { e.preventDefault(); setSelected(p); }}>
+            <Reveal as="a" key={p.id} delay={i * 40} className="proj-row" href={'#projects/' + p.id} onClick={(e) => { e.preventDefault(); openProject(p); }}>
               <span className="proj-row__num">{p.num}</span>
               <div>
                 <span className="proj-row__title">
@@ -201,7 +220,7 @@ function Projects({ layout, setLayout }) {
       {layout === 'grid' && (
         <div className="proj-grid" key={`grid-${filter}`}>
           {filtered.map((p, i) => (
-            <Reveal as="a" key={p.id} delay={i * 50} className="proj-card" href="#" onClick={(e) => { e.preventDefault(); setSelected(p); }}>
+            <Reveal as="a" key={p.id} delay={i * 50} className="proj-card" href={'#projects/' + p.id} onClick={(e) => { e.preventDefault(); openProject(p); }}>
               <div className="proj-card__thumb">
                 {p.thumb
                   ? <img src={p.thumb} alt={p.title} />
