@@ -16,6 +16,7 @@ function embedType(src) {
   const ext = src.split('.').pop().toLowerCase();
   if (ext === 'mp4' || ext === 'webm' || ext === 'ogg') return 'video';
   if (ext === 'pdf') return 'pdf';
+  if (ext === 'html' || ext === 'htm') return 'html';
   return 'image';
 }
 
@@ -42,6 +43,20 @@ function Embed({ src }) {
           </a>
         </div>
         <iframe src={src} className="proj-embed proj-embed--pdf" title="Project document" />
+      </div>
+    );
+  }
+
+  if (type === 'html') {
+    return (
+      <div className="proj-embed-wrap proj-embed-wrap--pdf">
+        <div className="proj-embed-pdf-bar">
+          <span>{src.split('/').pop()}</span>
+          <a href={src} target="_blank" rel="noopener noreferrer" className="proj-embed-pdf-open">
+            Open ↗
+          </a>
+        </div>
+        <iframe src={src} className="proj-embed proj-embed--html" title="Project notebook" />
       </div>
     );
   }

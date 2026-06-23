@@ -61,7 +61,17 @@ window.CONTENT = {
   projects: [
     // 2026
     {
-      id: "p10", num: "001",
+      id: "p19", num: "001",
+      title: "Lifestyle and Employment Analysis",
+      cat: "data-science", year: "2026",
+      desc: "Analysis of how lifestyle and demographic factors relate to employment outcomes using NHANES survey data.",
+      stack: "Python · pandas · scikit-learn · statsmodels · seaborn",
+      github: "https://github.com/huang-kenneth/NHANES-Analysis/",
+      thumb: "assets/lifestyle-employment-analysis.png",
+      examples: ["assets/lifestyle-employment-analysis.html"],
+    },
+    {
+      id: "p10", num: "002",
       title: "Robotics and AI Techniques",
       cat: "development", year: "2026",
       desc: "Various projects for GTech's CS7638. Implemented PID Control, SLAM, Particle and Kalman Filters.",
@@ -71,7 +81,7 @@ window.CONTENT = {
       examples: ["assets/rait-drone.mp4", "assets/rait-particlefilters.mp4", "assets/rait-slam.mp4"],
     },
     {
-      id: "p12", num: "002",
+      id: "p12", num: "003",
       title: "Unity 3D Game — Echoes of Ruin",
       cat: "development", year: "2026",
       desc: "Built a Unity game collaboratively with 4 other developers.",
@@ -80,7 +90,7 @@ window.CONTENT = {
       examples: ["assets/vgd-echoesofruin.mp4"],
     },
     {
-      id: "p13", num: "003",
+      id: "p13", num: "004",
       title: "Stock Ticker Dashboard",
       cat: "development", year: "2026",
       desc: "A stock tracker that visualizes historical and live data from stocks, powered by Alpaca.",
@@ -90,7 +100,7 @@ window.CONTENT = {
       examples: ["assets/tradingbot-demo.mp4"],
     },
     {
-      id: "p14", num: "004",
+      id: "p14", num: "005",
       title: "Job Tracker Extension",
       cat: "development", year: "2026",
       desc: "A Chrome extension that auto-stores job application info for organized tracking.",
@@ -99,7 +109,7 @@ window.CONTENT = {
       examples: ["assets/jobtracker-sample1.png", "assets/jobtracker-sample2.png"],
     },
     {
-      id: "p17", num: "005",
+      id: "p17", num: "006",
       title: "Geo-trainer Flashcards",
       cat: "development", year: "2026",
       desc: "A flashcard website for Geoguessr and studying geographical clues.",
@@ -108,7 +118,7 @@ window.CONTENT = {
       examples: ["assets/geotrainer.mp4"],
     },
     {
-      id: "p18", num: "006",
+      id: "p18", num: "007",
       title: "Youtube Lyric Video Generator (Rebuilt)",
       cat: "development", year: "2026",
       desc: "Auto YouTube download, vocal separation, transcription, alignment, subtitle rendering, and video composition.",
@@ -118,7 +128,7 @@ window.CONTENT = {
     },
     // 2025
     {
-      id: "p9",  num: "007",
+      id: "p9",  num: "008",
       title: "Simplified MapReduce Framework",
       cat: "development", year: "2025",
       desc: "Implemented a MapReduce framework from scratch: sharding, mapping, intermediary files, and reducing.",
@@ -128,7 +138,7 @@ window.CONTENT = {
       examples: ["assets/map-reduce.png"],
     },
     {
-      id: "p11", num: "008",
+      id: "p11", num: "009",
       title: "Job Comparison App",
       cat: "development", year: "2025",
       desc: "Job comparison Android app made with Android Studio.",
@@ -139,7 +149,7 @@ window.CONTENT = {
     },
     // 2023
     {
-      id: "p8",  num: "009",
+      id: "p8",  num: "010",
       title: "Generating E-Sports Commentary Using Audio",
       cat: "development", year: "2023",
       desc: "Trained a GPT-3 curie model using YouTube transcripts to auto-generate live commentary.",
@@ -149,7 +159,7 @@ window.CONTENT = {
       examples: ["assets/esports-ai.mp4"],
     },
     {
-      id: "p15", num: "010",
+      id: "p15", num: "011",
       title: "Fomotimer",
       cat: "development", year: "2023",
       desc: "A Pomodoro technique inspired global timer for the web. Good for studying with others.",
@@ -159,7 +169,7 @@ window.CONTENT = {
       examples: ["assets/fomotimer.gif"],
     },
     {
-      id: "p16", num: "011",
+      id: "p16", num: "012",
       title: "Youtube Lyric Video Generator",
       cat: "development", year: "2023",
       desc: "A web app that converts YouTube links to lyric video mp4s.",
@@ -171,7 +181,7 @@ window.CONTENT = {
     },
     // 2022
     {
-      id: "p7",  num: "012",
+      id: "p7",  num: "013",
       title: "Predicting Music Genre from Audio Features",
       cat: "data-science", year: "2022",
       desc: "Music genre classification using Random Forest.",
@@ -181,7 +191,7 @@ window.CONTENT = {
     },
     // 2021
     {
-      id: "p6",  num: "013",
+      id: "p6",  num: "014",
       title: "United States Wind Turbine Analysis",
       cat: "data-science", year: "2021",
       desc: "Investigate location attributes and power production from wind farms across the USA.",
@@ -191,7 +201,7 @@ window.CONTENT = {
     },
     // 2020
     {
-      id: "p4",  num: "014",
+      id: "p4",  num: "015",
       title: "Predicting NYC Household Income",
       cat: "data-science", year: "2020",
       desc: "Predicting annual income of residents in NYC using the NYC Housing and Vacancy Survey.",
@@ -200,7 +210,7 @@ window.CONTENT = {
       examples: ["assets/36202-1.pdf"],
     },
     {
-      id: "p5",  num: "015",
+      id: "p5",  num: "016",
       title: "Predicting Room Occupancy to Signal Fire Emergencies",
       cat: "data-science", year: "2020",
       desc: "Project to predict when a building should be evacuated based on sensor data.",
@@ -210,7 +220,7 @@ window.CONTENT = {
     },
     // 2019
     {
-      id: "p1",  num: "016",
+      id: "p1",  num: "017",
       title: "15-112 — Music Rush",
       cat: "development", year: "2019",
       desc: "Piano Tiles style rhythm game with beat detection to generate levels for any audio file.",
@@ -220,7 +230,7 @@ window.CONTENT = {
       examples: ["assets/15-112-music-rush.mp4"],
     },
     {
-      id: "p2",  num: "017",
+      id: "p2",  num: "018",
       title: "15-112 — Marvel Sidescroller",
       cat: "development", year: "2019",
       desc: "Sidescroller game where you need to move obstacles away from the player.",
@@ -229,7 +239,7 @@ window.CONTENT = {
       examples: ["assets/15112-sidescroller.mp4"],
     },
     {
-      id: "p3",  num: "018",
+      id: "p3",  num: "019",
       title: "15-112 — Tetris",
       cat: "development", year: "2019",
       desc: "Recreation of Tetris using CMU's graphics library.",
